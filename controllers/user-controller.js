@@ -12,22 +12,21 @@ class UserController {
                 });
             return res.json(userData);
         } catch (e) {
-            console.log(e);
-            return res.status(401).json(e.message);
+            next(e);
         }
     }
     async login(req, res, next) {
         try {
 
         } catch (e) {
-
+            next(e);
         }
     }
     async logout(req, res, next) {
         try {
 
         } catch (e) {
-
+            next(e);
         }
     }
     async activate(req, res, next) {
@@ -36,22 +35,21 @@ class UserController {
             await userService.activate(activationLink);
             return res.redirect(process.env.CLIENT_URL)
         } catch (e) {
-            console.log(e);
-            res.status(404).json(e.message);
+            next(e);
         }
     }
     async refresh(req, res, next) {
         try {
 
         } catch (e) {
-
+            next(e);
         }
     }
     async getUsers(req, res, next) {
         try {
             res.json(['123', '456']);
         } catch (e) {
-
+            next(e);
         }
     }
 }
