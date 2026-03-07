@@ -13,6 +13,7 @@ class UserController {
             return res.json(userData);
         } catch (e) {
             console.log(e);
+            return res.status(401).json(e.message);
         }
     }
     async login(req, res, next) {
