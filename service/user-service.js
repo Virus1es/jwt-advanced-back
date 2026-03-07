@@ -76,6 +76,10 @@ class UserService {
 
         return { ...tokens, user: userDto }
     }
+
+    async getAllUsers() {
+        return UserModel.find();
+    }
 }
 
 module.exports = new UserService();
